@@ -91,4 +91,28 @@ public class HamcrestTest {
 		assertThat("test string", is(any(String.class)));
 		assertThat("test string", is(any(Object.class)));
 	}
+
+	// allOf(Matcher<? extends T>…) and anyOf(Matcher<? extends T>…)
+	@Test
+	public void hamcrestAllOfAnyOf_test() {
+		String testString1 = "Achilles is powerful";
+		assertThat(testString1, allOf(startsWith("Achi"), endsWith("ul"), containsString("Achilles")));
+
+		String testString2 = "Hector killed Achilles";
+		assertThat(testString2, anyOf(startsWith("Hec"), containsString("baeldung")));
+	}
+
+	// hasItem(T)and hasItem(Matcher<? extends T>)
+	@Test
+	public void hamcrestHasItem_test() {
+		List<String> list1 = Lists.newArrayList("java", "spring", "baeldung");
+
+		assertThat(list1, hasItem("java"));
+		assertThat(list1, hasItem(isA(String.class)));
+
+		List<String> list2 = Lists.newArrayList("java", "spring", "baeldung");
+
+		assertThat(list2, hasItems("java", "baeldung"));
+		assertThat(list2, hasItems(isA(String.class), endsWith("ing")));
+	}
 }
