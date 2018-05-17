@@ -10,6 +10,7 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HamcrestTest {
 
@@ -115,4 +116,15 @@ public class HamcrestTest {
 		assertThat(list2, hasItems("java", "baeldung"));
 		assertThat(list2, hasItems(isA(String.class), endsWith("ing")));
 	}
+
+	// both(Matcher<? extends T>) and either(Matcher<? extends T>)
+	@Test
+	public void hamcrestBothEither_test() {
+		String testString1 = "daenerys targaryen";
+		assertThat(testString1, both(startsWith("daene")).and(containsString("yen")));
+
+		String testString2 = "daenerys targaryen";
+		assertThat(testString2, either(startsWith("tar")).or(containsString("targaryen")));
+	}
+
 }
