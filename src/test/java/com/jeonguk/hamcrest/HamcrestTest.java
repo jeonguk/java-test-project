@@ -60,4 +60,25 @@ public class HamcrestTest {
 		assertThat(testNumber, is(notNullValue()));
 		assertThat(testNumber, is(notNullValue(Integer.class)));
 	}
+
+	// instanceOf(Class<?>)
+	@Test
+	public void hamcrestInstanceOf_test() {
+		assertThat("instanceOf example", is(instanceOf(String.class)));
+	}
+
+	// isA(Class<T> type)
+	@Test
+	public void hamcrestIsA_test() {
+		assertThat("Drogon is biggest dragon", isA(String.class));
+	}
+
+	// sameInstance()
+	@Test
+	public void hamcrestSameInstance_test() {
+		String string1 = "Viseron";
+		String string2 = string1;
+
+		assertThat(string1, is(sameInstance(string2)));
+	}
 }
