@@ -1,13 +1,16 @@
 package com.jeonguk.hamcrest;
 
 import com.google.common.collect.Lists;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HamcrestTest {
 
 	/**
@@ -80,5 +83,12 @@ public class HamcrestTest {
 		String string2 = string1;
 
 		assertThat(string1, is(sameInstance(string2)));
+	}
+
+	// any(Class<T>)
+	@Test
+	public void hamcrestAny_test() {
+		assertThat("test string", is(any(String.class)));
+		assertThat("test string", is(any(Object.class)));
 	}
 }
