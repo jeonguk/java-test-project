@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "firstname": "Jeonguk",
+  "languages": [
+    {
+      "lang": "ko",
+      "knowledge": "java"
+    },
+    {
+      "lang": "en",
+      "knowledge": "advanced"
+    }
+  ],
+  "job": {
+    "site": "www.jeonguk.com",
+    "name": "Java Developer"
+  }
+}
