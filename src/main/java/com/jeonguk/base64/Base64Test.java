@@ -36,6 +36,7 @@ public class Base64Test {
 		decodedBytes = Base64.getMimeDecoder().decode(encodedMime);
 		String decodedMime = new String(decodedBytes);
 		log.info("decodedMime {}", decodedMime);
+
 	}
 
 	private static StringBuilder getMimeBuffer() {
