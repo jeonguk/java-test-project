@@ -3,6 +3,7 @@ package com.jeonguk.base64;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Base64;
+import java.util.UUID;
 
 @Slf4j
 public class Base64Test {
@@ -26,5 +27,24 @@ public class Base64Test {
 		log.info("originalUrl {}", originalUrl);
 		log.info("decodedUrl  {}", decodedUrl);
 
+		// Java 8 MIME Encoding
+		StringBuilder buffer = getMimeBuffer();
+		byte[] encodedAsBytes = buffer.toString().getBytes();
+		String encodedMime = Base64.getMimeEncoder().encodeToString(encodedAsBytes);
+		log.info("encodedMime {}", encodedMime);
+
+		decodedBytes = Base64.getMimeDecoder().decode(encodedMime);
+		String decodedMime = new String(decodedBytes);
+		log.info("decodedMime {}", decodedMime);
 	}
+
+	private static StringBuilder getMimeBuffer() {
+		StringBuilder buffer = new StringBuilder();
+		for (int count = 0; count < 10; count++) {
+			buffer.append(UUID.randomUUID().toString());
+		}
+		return buffer;
+	}
+
+
 }
