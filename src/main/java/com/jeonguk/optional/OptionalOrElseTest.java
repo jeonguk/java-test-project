@@ -60,4 +60,13 @@ public class OptionalOrElseTest {
 //		assertEquals("Yogen", pickLuckyNameWOrElse(NAMES, "Y"));
 //		assertEquals("No lucky name found", pickLuckyNameWOrElse(NAMES, "Q"));
 //	}
+
+	public String getStr() {
+		String str = null;
+		return Optional.ofNullable(str).orElse("null str");
+	}
+	@Test
+	public void testOrElseTest() {
+		assertEquals("null str", getStr());
+	}
 }
