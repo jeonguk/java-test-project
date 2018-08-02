@@ -1,11 +1,8 @@
 package com.jeonguk.optional;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
 
 import java.util.Optional;
-
-import static org.junit.Assert.assertEquals;
 
 @Slf4j
 public class OptionalOfTest {

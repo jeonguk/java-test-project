@@ -1,9 +1,12 @@
 package com.jeonguk.optional;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 public class OptionalTestJava8 {
 
 	public static void main(String[] args) {
@@ -25,6 +28,8 @@ public class OptionalTestJava8 {
 					p.name(),
 					p.address().orElse(Address.EMPTY_ADDRESS));
 		});
+
+		log.info("value = {}", Optional.of(johnaddress).map(Address::city).orElse(""));
 	}
 }
 
