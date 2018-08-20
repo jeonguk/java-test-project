@@ -1,7 +1,9 @@
 package com.jeonguk;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,29 +16,43 @@ public class JavaTest {
 
 	public void aaa() {
 
-		List<Info> list = Arrays.asList(new Info());
+//		List<Info> list = Arrays.asList(new Info());
+//
+//		String a = "x";
+//		System.out.println(a.hashCode());
+//
+//		a = a+ "0";
+//		System.out.println(a.hashCode());
+//
+//
+//		list.forEach(f -> f.a += "0");
+//
+//		log.info("{}", list.get(0).a);
+//
+//
+//		List<String> list2 = Arrays.asList("1", "2", "3");
+//
+//		list2.forEach(f -> f = f + "x");
+//		list.forEach(f -> f.a += "0");
+//
+//
+//
+//		log.info("{}", list2.toString());
 
-		String a = "x";
-		System.out.println(a.hashCode());
+		String[] strArr;
 
-		a = a+ "0";
-		System.out.println(a.hashCode());
+		List<String> list = new ArrayList<>();
+		list.add("11111");
+		list.add("22222");
+		list.add("33333");
+		list.add("44444");
 
+		Pet p = new Pet();
+		p.setStrArr(list.toArray(new String[0]));
 
-		list.forEach(f -> f.a += "0");
-
-		log.info("{}", list.get(0).a);
-
-
-		List<String> list2 = Arrays.asList("1", "2", "3");
-
-		list2.forEach(f -> f = f + "x");
-		list.forEach(f -> f.a += "0");
-
-
-
-		log.info("{}", list2.toString());
-
+		for (String s: p.getStrArr()) {
+			System.out.println(s);
+		}
 	}
 	public static void main(String[] args) {
 		JavaTest javaTest = new JavaTest();
@@ -45,5 +61,10 @@ public class JavaTest {
 
 	}
 
+}
+
+@Data
+class Pet {
+	private String[] strArr;
 }
 
