@@ -35,16 +35,18 @@ public class EnumTest {
 @Getter
 enum ImageInfo {
 
-	AAA("AAA", "AAA_l.png", "AAA_m.png", "AAA_s.png"),
-	BBB("BBB", "BBB_l.png", "BBB_m.png", "BBB_s.png");
+	AAA("AAA", "A NAME", "AAA_l.png", "AAA_m.png", "AAA_s.png"),
+	BBB("BBB", "B NAME", "BBB_l.png", "BBB_m.png", "BBB_s.png");
 
 	private String tyCd;
+	private String tyNm;
 	private String imgUrl_l;
 	private String imgUrl_m;
 	private String imgUrl_s;
 
-	ImageInfo(String tyCd, String imgUrl_l, String imgUrl_m, String imgUrl_s) {
+	ImageInfo(String tyCd, String tyNm, String imgUrl_l, String imgUrl_m, String imgUrl_s) {
 		this.tyCd = tyCd;
+		this.tyNm = tyNm;
 		this.imgUrl_l = imgUrl_l;
 		this.imgUrl_m = imgUrl_m;
 		this.imgUrl_s = imgUrl_s;
