@@ -1,4 +1,4 @@
-package com.jeonguk.test;
+package com.jeonguk.convert;
 
 public class MapToListConverterTest {
 

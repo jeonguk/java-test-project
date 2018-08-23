@@ -1,15 +1,20 @@
-package com.jeonguk.test;
+package com.jeonguk.convert;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 import java.text.DecimalFormat;
 
 @Slf4j
-public class NumberTest {
+public class StringAmtConvert {
 
 	public static void main(String[] ar) {
-		String strNumber = "200500000";
-		final double db = Double.parseDouble(strNumber);
+		String strAmt = "250000000";
+		log.info("convertStrAmtToAmtStr 250000000 = {}", convertStrAmtToAmtStr(strAmt));
+	}
+
+	public static String convertStrAmtToAmtStr(String strAmt) {
+		final double db = Double.parseDouble(StringUtils.defaultIfBlank(strAmt, "0"));
 		final DecimalFormat d = new DecimalFormat("#,####");
 
 		final String[] unit = new String[]{"", "만","억","조"};
@@ -22,7 +27,7 @@ public class NumberTest {
 			}
 			cnt++;
 		}
-		log.info("result {}원", result);
+		result.append("원");
+		return result.toString();
 	}
-
 }
