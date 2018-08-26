@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class NameAscendingOrderOfExecutionTest {
-	private static StringBuilder output = new StringBuilder("");
+	private static StringBuilder output = new StringBuilder();
 
 	@Test
 	public void secondTest() {

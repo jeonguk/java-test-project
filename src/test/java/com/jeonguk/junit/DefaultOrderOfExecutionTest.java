@@ -3,11 +3,10 @@ package com.jeonguk.junit;
 import org.junit.AfterClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
 import static org.junit.Assert.assertEquals;
 
-@FixMethodOrder(MethodSorters.DEFAULT)
+@FixMethodOrder()
 public class DefaultOrderOfExecutionTest {
 	private static StringBuilder output = new StringBuilder("");
 
